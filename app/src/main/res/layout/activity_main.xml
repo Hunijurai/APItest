@@ -1,0 +1,301 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:id="@+id/main_CL"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:layout_margin="0dp"
+    android:background="@drawable/light_theme"
+    tools:context=".MainActivity">
+
+    <androidx.constraintlayout.widget.ConstraintLayout
+        android:id="@+id/CL1"
+        android:layout_width="0dp"
+        android:layout_height="100dp"
+        android:gravity="center"
+        android:orientation="horizontal"
+        app:layout_constraintBottom_toTopOf="@+id/CL4"
+        app:layout_constraintHorizontal_chainStyle="spread_inside"
+        app:layout_constraintLeft_toLeftOf="parent"
+        app:layout_constraintRight_toRightOf="parent"
+        app:layout_constraintTop_toTopOf="parent">
+
+        <TextView
+            android:id="@+id/TT1"
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:gravity="center"
+            android:layout_margin="50dp"
+            android:text="Погода"
+            android:textSize="25dp"
+            android:textColor="@color/black"
+            android:background="@color/white"
+            android:backgroundTint="#34FFFFFF"
+            app:layout_constraintBottom_toBottomOf="parent"
+            app:layout_constraintEnd_toStartOf="@+id/theme_btn"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toTopOf="parent" />
+
+        <ImageButton
+            android:id="@+id/theme_btn"
+            android:layout_width="50dp"
+            android:layout_height="50dp"
+            android:background="@android:color/transparent"
+            android:scaleType="centerCrop"
+            android:src="@drawable/dark"
+            android:layout_marginEnd="50dp"
+            app:layout_constraintBottom_toBottomOf="parent"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toEndOf="@+id/TT1"
+            app:layout_constraintTop_toTopOf="parent" />
+
+    </androidx.constraintlayout.widget.ConstraintLayout>
+
+    <androidx.constraintlayout.widget.ConstraintLayout
+        android:id="@+id/CL4"
+        android:layout_width="0dp"
+        android:layout_height="100dp"
+        android:gravity="center"
+        android:orientation="horizontal"
+        app:layout_constraintBottom_toTopOf="@+id/CL2"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/CL1">
+
+        <EditText
+            android:id="@+id/edCoords"
+            android:layout_width="0dp"
+            android:layout_height="65dp"
+            android:gravity="center"
+            android:layout_marginEnd="20dp"
+            android:text="54.484397, 53.479192"
+            android:textColor="@color/black"
+            android:background="@color/white"
+            android:backgroundTint="#34FFFFFF"
+            app:layout_constraintBottom_toBottomOf="parent"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toTopOf="parent"
+            app:layout_constraintEnd_toStartOf="@+id/btnGetWeather"/>
+
+        <Button
+            android:id="@+id/btnGetWeather"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="Получить данные"
+            android:backgroundTint="#34FFFFFF"
+            android:textSize="20dp"
+            android:textColor="@android:color/black"
+            app:layout_constraintBottom_toBottomOf="parent"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toEndOf="@+id/edCoords"
+            app:layout_constraintTop_toTopOf="parent" />
+
+    </androidx.constraintlayout.widget.ConstraintLayout>
+
+    <androidx.constraintlayout.widget.ConstraintLayout
+        android:id="@+id/CL2"
+        android:layout_width="0dp"
+        android:layout_height="0dp"
+        android:gravity="center"
+        android:orientation="vertical"
+        app:layout_constraintBottom_toTopOf="@+id/tAnswer"
+        app:layout_constraintHorizontal_chainStyle="spread_inside"
+        app:layout_constraintLeft_toLeftOf="parent"
+        app:layout_constraintRight_toRightOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/CL4">
+
+        <androidx.constraintlayout.widget.ConstraintLayout
+            android:id="@+id/JJ1"
+            android:layout_width="0dp"
+            android:layout_height="0dp"
+            app:layout_constraintBottom_toTopOf="@+id/JJ2"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toTopOf="parent">
+
+            <CheckBox
+                android:layout_width="50dp"
+                android:layout_height="50dp"
+                android:id="@+id/chTemperature"
+                android:layout_marginEnd="10dp"
+                android:background="@color/white"
+                android:backgroundTint="#34FFFFFF"
+                app:layout_constraintBottom_toBottomOf="parent"
+                app:layout_constraintEnd_toStartOf="@+id/JJ1tv"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toTopOf="parent"/>
+
+            <TextView
+                android:layout_width="0dp"
+                android:layout_height="wrap_content"
+                android:id="@+id/JJ1tv"
+                android:text="Температура"
+                android:textSize="30dp"
+                android:textColor="@color/black"
+                android:background="@color/white"
+                android:backgroundTint="#34FFFFFF"
+                app:layout_constraintBottom_toBottomOf="parent"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintStart_toEndOf="@+id/chTemperature"
+                app:layout_constraintTop_toTopOf="parent"/>
+        </androidx.constraintlayout.widget.ConstraintLayout>
+        <androidx.constraintlayout.widget.ConstraintLayout
+            android:id="@+id/JJ2"
+            android:layout_width="0dp"
+            android:layout_height="0dp"
+            app:layout_constraintBottom_toTopOf="@+id/JJ3"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toBottomOf="@+id/JJ1">
+
+            <CheckBox
+                android:layout_width="50dp"
+                android:layout_height="50dp"
+                android:id="@+id/chWindSpeed"
+                android:layout_marginEnd="10dp"
+                android:background="@color/white"
+                android:backgroundTint="#34FFFFFF"
+                app:layout_constraintBottom_toBottomOf="parent"
+                app:layout_constraintEnd_toStartOf="@+id/JJ2tv"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toTopOf="parent"/>
+
+            <TextView
+                android:layout_width="0dp"
+                android:layout_height="wrap_content"
+                android:id="@+id/JJ2tv"
+                android:text="Скорость ветра"
+                android:textSize="30dp"
+                android:textColor="@color/black"
+                android:background="@color/white"
+                android:backgroundTint="#34FFFFFF"
+                app:layout_constraintBottom_toBottomOf="parent"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintStart_toEndOf="@+id/chWindSpeed"
+                app:layout_constraintTop_toTopOf="parent"/>
+        </androidx.constraintlayout.widget.ConstraintLayout>
+        <androidx.constraintlayout.widget.ConstraintLayout
+            android:id="@+id/JJ3"
+            android:layout_width="0dp"
+            android:layout_height="0dp"
+            app:layout_constraintBottom_toTopOf="@+id/JJ4"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toBottomOf="@+id/JJ2">
+
+            <CheckBox
+                android:layout_width="50dp"
+                android:layout_height="50dp"
+                android:id="@+id/chHumidity"
+                android:layout_marginEnd="10dp"
+                android:background="@color/white"
+                android:backgroundTint="#34FFFFFF"
+                app:layout_constraintBottom_toBottomOf="parent"
+                app:layout_constraintEnd_toStartOf="@+id/JJ3tv"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toTopOf="parent"/>
+
+            <TextView
+                android:layout_width="0dp"
+                android:layout_height="wrap_content"
+                android:id="@+id/JJ3tv"
+                android:text="Влажность"
+                android:textSize="30dp"
+                android:textColor="@color/black"
+                android:background="@color/white"
+                android:backgroundTint="#34FFFFFF"
+                app:layout_constraintBottom_toBottomOf="parent"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintStart_toEndOf="@+id/chHumidity"
+                app:layout_constraintTop_toTopOf="parent"/>
+        </androidx.constraintlayout.widget.ConstraintLayout>
+
+        <androidx.constraintlayout.widget.ConstraintLayout
+            android:id="@+id/JJ4"
+            android:layout_width="0dp"
+            android:layout_height="0dp"
+            app:layout_constraintBottom_toTopOf="@id/JJ5"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toBottomOf="@+id/JJ3">
+
+            <CheckBox
+                android:layout_width="50dp"
+                android:layout_height="50dp"
+                android:id="@+id/chRain"
+                android:layout_marginEnd="10dp"
+                android:background="@color/white"
+                android:backgroundTint="#34FFFFFF"
+                app:layout_constraintBottom_toBottomOf="parent"
+                app:layout_constraintEnd_toStartOf="@+id/JJ4tv"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toTopOf="parent"/>
+
+            <TextView
+                android:layout_width="0dp"
+                android:layout_height="wrap_content"
+                android:id="@+id/JJ4tv"
+                android:text="Дождь"
+                android:textSize="30dp"
+                android:textColor="@color/black"
+                android:background="@color/white"
+                android:backgroundTint="#34FFFFFF"
+                app:layout_constraintBottom_toBottomOf="parent"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintStart_toEndOf="@+id/chRain"
+                app:layout_constraintTop_toTopOf="parent"/>
+        </androidx.constraintlayout.widget.ConstraintLayout>
+        <androidx.constraintlayout.widget.ConstraintLayout
+            android:id="@+id/JJ5"
+            android:layout_width="0dp"
+            android:layout_height="0dp"
+            app:layout_constraintBottom_toBottomOf="parent"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toBottomOf="@+id/JJ4">
+
+            <CheckBox
+                android:layout_width="50dp"
+                android:layout_height="50dp"
+                android:id="@+id/chApparentT"
+                android:layout_marginEnd="10dp"
+                android:background="@color/white"
+                android:backgroundTint="#34FFFFFF"
+                app:layout_constraintBottom_toBottomOf="parent"
+                app:layout_constraintEnd_toStartOf="@+id/JJ5tv"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toTopOf="parent"/>
+
+            <TextView
+                android:layout_width="0dp"
+                android:layout_height="wrap_content"
+                android:id="@+id/JJ5tv"
+                android:text="Темп. по ощущениям"
+                android:textSize="30dp"
+                android:textColor="@color/black"
+                android:background="@color/white"
+                android:backgroundTint="#34FFFFFF"
+                app:layout_constraintBottom_toBottomOf="parent"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintStart_toEndOf="@+id/chApparentT"
+                app:layout_constraintTop_toTopOf="parent"/>
+        </androidx.constraintlayout.widget.ConstraintLayout>
+
+    </androidx.constraintlayout.widget.ConstraintLayout>
+
+    <EditText
+        android:layout_width="0dp"
+        android:layout_height="0dp"
+        android:id="@+id/tAnswer"
+        android:text="Ответ от сервиса погоды"
+        android:textSize="30dp"
+        android:textColor="@color/black"
+        android:background="@color/white"
+        android:backgroundTint="#34FFFFFF"
+        app:layout_constraintTop_toBottomOf="@+id/CL2"
+        app:layout_constraintLeft_toLeftOf="parent"
+        app:layout_constraintRight_toRightOf="parent"
+        app:layout_constraintBottom_toBottomOf="parent"/>
+
+</androidx.constraintlayout.widget.ConstraintLayout>
